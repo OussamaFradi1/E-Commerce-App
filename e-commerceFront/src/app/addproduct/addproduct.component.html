@@ -1,0 +1,68 @@
+<div class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Add New Product</h1>
+                            </div>
+                            <form class="user" [formGroup]="registerForm">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text"formControlName="name" class="form-control form-control-user" id="exampleFirstName" placeholder="name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" formControlName="price" class="form-control form-control-user" id="exampleLastName" placeholder="price">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" formControlName="description" class="form-control form-control-user" id="exampleInputEmail" placeholder="description">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="form-group">  
+                                        <label>Subcategory_Title
+                                        <select name="idsubcategory" aria-controls="dataTable"  formControlName="idsubcategory"  class="custom-select custom-select-sm form-control form-control-sm">
+                                        <option *ngFor="let subcateg of listesubcategory" [value]="subcateg.id">{{subcateg.title}}</option>
+                                        </select></label>
+                                       </div>
+                                       <div class="form-group">  
+                                           <label>Provider_Name
+                                           <select name="idprovider" aria-controls="dataTable"  formControlName="idprovider"  class="custom-select custom-select-sm form-control form-control-sm">
+                                           <option *ngFor="let provider of listeproviders" [value]="provider.id">{{provider.firstName}}</option>
+                                           </select></label>
+                                          </div>  
+                                </div>
+                              
+                                <hr>
+                                <div class="text-center">
+                                    <button class="btn btn-primary mr-1" (click)="onSubmit()">Register</button>
+                                    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                                </div>
+                            </form>
+                            <hr>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</div>
